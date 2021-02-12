@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { CounterComponent } from './counter/counter.component';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './counter/store/counter.reducer';
+import { AppComponent } from './app.component';
+import { CounterComponent } from './counter/counter.component';
+import { environment } from '../environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,9 @@ import { reducer } from './counter/store/counter.reducer';
   imports: [
     BrowserModule,
     StoreModule.forRoot({ count: reducer }),
+    StoreDevtoolsModule.instrument({
+      logOnly: environment.production
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
