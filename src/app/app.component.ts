@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { update } from './counter/store/counter.actions';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ivytest';
+  counter$: Observable<number>;
+
+  constructor(private store: Store<{ count: number }>) {
+    this.counter$ = store.select('count');
+  }
+
+  updateCounter(v: number): void {
+    this.store.dispatch(update({ value: v }));
+  }
 }

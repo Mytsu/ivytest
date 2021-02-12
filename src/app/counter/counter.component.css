@@ -1,0 +1,55 @@
+button {
+  height: 3rem;
+  width: 3rem;
+  border: none;
+  background: inherit;
+  font-size: 2rem;
+  color: black;
+  cursor: pointer;
+  transition: all ease .5s 0s;
+  border-radius: 50%;
+  overflow: hidden;
+  outline: none;
+}
+
+button:hover {
+  background-color: #AAAAAA;
+}
+
+button:active {
+  transform: translateY(-4px);
+}
+
+button:after {
+  content: "";
+  background: #000000;
+  display: block;
+  position: absolute;
+  padding-top: 3rem;
+  padding-left: 3rem;
+  margin-left: 2px !important;
+  margin-top: calc(-3rem + 2px);
+  opacity: 0;
+  transition: all 0.8s;
+  mix-blend-mode: color-burn;
+  border-radius: 50%;
+}
+
+button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+span {
+  font-size: 5rem;
+  margin: 0 3rem 0 3rem;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

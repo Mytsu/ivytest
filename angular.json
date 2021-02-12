@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "ivytest"
+  "defaultProject": "ivytest",
+  "cli": {
+    "analytics": "0050f9e7-c9c1-4cca-b5bd-e9395461cf25"
+  }
 }
